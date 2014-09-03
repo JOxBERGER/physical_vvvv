@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
-   <PATCH nodename="C:\Users\JL\Documents\GitHub\physical_with_vvvv\patches\quad_queue.v4p" systemname="quad_queu" filename="C:\Users\JL\Documents\GitHub\physical_with_vvvv\patches\quad_queu.v4p">
+   <PATCH nodename="C:\Users\JL\Documents\GitHub\physical_vvvv\patches\output\quad_queue.v4p" systemname="quad_queue" filename="C:\Users\JL\Documents\GitHub\physical_vvvv\patches\output\quad_queue.v4p">
    <BOUNDS type="Window" left="4665" top="4860" width="9000" height="6000">
    </BOUNDS>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="4">

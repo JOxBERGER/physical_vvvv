@@ -1,0 +1,223 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
+   <PATCH nodename="C:\Users\JL\Documents\GitHub\physical_vvvv\patches\_root_02.v4p" systemname="_root_02" filename="C:\Users\JL\Documents\GitHub\physical_vvvv\patches\_root_02.v4p">
+   <BOUNDS type="Window" left="7710" top="1155" width="10620" height="9420">
+   </BOUNDS>
+   <NODE systemname="Accelerometer" filename="inputs\Accelerometer.v4p" nodename="inputs\Accelerometer.v4p" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="915" top="1020" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Pitch" visible="1">
+   </PIN>
+   <PIN pinname="Roll" visible="1">
+   </PIN>
+   <PIN pinname="OSCDroid Address" visible="1" slicecount="1" values="/oscdroid/accelerometer">
+   </PIN>
+   <PIN pinname="Yaw" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="8250" top="4050" width="10950" height="12180">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="6" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3495" top="3840" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3495" top="3840" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Yaw" dstnodeid="6" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="lines" filename="output\lines.v4p" componentmode="Hidden" id="2" nodename="output\lines.v4p">
+   <BOUNDS type="Node" left="645" top="6105" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="645" top="6105" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="480" top="840" width="7305" height="7305">
+   </BOUNDS>
+   <PIN pinname="x" visible="1">
+   </PIN>
+   <PIN pinname="y" visible="1">
+   </PIN>
+   <PIN pinname="z" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="queue-filter" filename="modificators\queue-filter.v4p" componentmode="Hidden" id="1" nodename="C:\Users\JL\Documents\GitHub\physical_vvvv\patches\modificators\queue-filter.v4p">
+   <BOUNDS type="Node" left="900" top="3270" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="900" top="3270" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="6540" top="5055" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   <PIN pinname="Frame Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Pitch" dstnodeid="1" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Roll" dstnodeid="1" dstpinname="Y">
+   </LINK>
+   <NODE systemname="filter_osc" filename="modificators\filter_osc.v4p" componentmode="Hidden" id="0" nodename="C:\Users\JL\Documents\GitHub\physical_vvvv\patches\modificators\filter_osc.v4p">
+   <BOUNDS type="Node" left="630" top="4140" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="630" top="4140" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="3165" top="3315" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Cyclics / second" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Velocity Out" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" visible="1" values="7">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="X" dstnodeid="0" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y" dstnodeid="0" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Z" dstnodeid="0" dstpinname="Z">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="X" dstnodeid="2" dstpinname="x">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Y" dstnodeid="2" dstpinname="y">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Z" dstnodeid="2" dstpinname="z">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="1620" top="7470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Inital Distance">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="0.05">
+   </PIN>
+   <PIN pinname="Initial Pitch" slicecount="1" values="0.08">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2250" top="6885" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2250" top="6885" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="3.06">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="11" dstpinname="Inital Distance">
+   </LINK>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="14">
+   <BOUNDS type="Node" left="645" top="7935" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="645" top="7935" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="810" top="2115" width="6240" height="5010">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D16">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="View" dstnodeid="14" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Projection" dstnodeid="14" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="IP (Network)" nodename="IP (Network)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="5070" top="585" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="IP" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="16">
+   <BOUNDS type="Node" left="5775" top="1020" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5775" top="1020" width="1590" height="1245">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="IP" dstnodeid="16" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Yaw" dstnodeid="1" dstpinname="Z">
+   </LINK>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="645" top="7170" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="17" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Layer" dstnodeid="14" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="AxisAndGrid (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" nodename="AxisAndGrid (DX9)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="405" top="6525" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Draw Mode" slicecount="1" values="WireFrame">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Layer" dstnodeid="17" dstpinname="Layer 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="435" top="1710" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="435" top="1710" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="600">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Frame Count">
+   </LINK>
+   <NODE nodename="Vector (3D Join)" id="20" systemname="Vector (3d Join)">
+   <PIN pinname="X" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.01">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="1.97">
+   </PIN>
+   <BOUNDS type="Node" left="1620" top="7035" width="0" height="0">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="XYZ" dstnodeid="11" dstpinname="Initial Interest">
+   </LINK>
+   </PATCH>
